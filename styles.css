@@ -15,12 +15,13 @@ body {
 
 h1 {
     text-shadow: var(--shadow);
+    margin: 20px;
 }
 
 #heading {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 15vh;
     background-color: var(--background-colour);
@@ -38,7 +39,7 @@ h1 {
     justify-content: center;
 }
 
-#add-first-button {
+#add-book-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +55,14 @@ h1 {
     background-color: #ffffff;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    margin: 20px;
 
+}
+
+#add-book-button:hover {
+    background-color: var(--background-colour);
+    color: #ffffff;
+    border: 2px solid white;
 }
 
 #footer {
@@ -65,4 +73,64 @@ h1 {
     width: 100%;
     color: white;
     background-color: var(--footer-colour);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 15%;
+}
+
+#close-button {
+    background-color: var(--background-colour);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Styles for the form inside the modal */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+button[type="submit"] {
+    background-color: var(--background-colour);
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 100%;
 }

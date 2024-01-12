@@ -12,9 +12,27 @@
 <body>
     <div id="heading">
         <h1>Library Project</h1>
+        <button id="add-book-button">Add book</button>
     </div>
     <div id="book-space">
-        <button id="add-first-button">Add your first book</button>
+        <div id="books"></div>
+        
+
+        <div class="overlay" id="overlay">
+            <div class="modal">
+                <h2>Read a Book</h2>
+                <form onsubmit="submitForm(event)">
+                    <label for="bookTitle">Book Title:</label>
+                    <input type="text" id="bookTitle" required>
+    
+                    <label for="authorName">Author Name:</label>
+                    <input type="text" id="authorName" required>
+    
+                    <button type="submit">Submit</button>
+                </form>
+                <button id="close-button" onclick="closeModal()">Close</button>
+            </div>
+        </div>
     </div>
     <div id="footer">
         This is created by me.
