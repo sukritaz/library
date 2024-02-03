@@ -151,6 +151,14 @@ input {
     margin: 10px;
 }
 
+.isRead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+
 button[type="submit"] {
     background-color: var(--background-colour);
     color: #fff;
@@ -183,7 +191,7 @@ button[type="submit"] {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#toggleRead {
+#toggleRead, .deleteButton {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -192,7 +200,8 @@ button[type="submit"] {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin: 15px;
+    margin-bottom: 15px;
+    width: 75%;
 }
 
 #toggleRead.active {
@@ -209,4 +218,9 @@ button[type="submit"] {
 .bookName,
 .bookAuthor {
     margin-bottom: 20px;
+}
+
+.deleteButton {
+    border: none;
+    background-color: red;
 }
