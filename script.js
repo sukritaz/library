@@ -8,15 +8,31 @@ addBookButton.addEventListener("click", () => {
     
 });
 
-function Book(id, name, author, isRead) {
-    this.id = id;
-    this.name = name;
-    this.author = author;
-    this.isRead = isRead;
-}
+class Book {
+    #id;
+    #name;
+    #author;
+    #isRead;
 
-Book.prototype.sayName = function() {
-    alert(this.name + " author: " + this.author);
+    constructor(id, name, author, isRead) {
+        this.#id = id;
+        this.#name = name;
+        this.#author = author;
+        this.#isRead = isRead;
+    }
+
+    getId() {
+        return this.#id;
+    }
+    getName() {
+        return this.#name;
+    }
+    getAuthor() {
+        return this.#author;
+    }
+    getIsRead() {
+        return this.#isRead;
+    }
 }
 
 function addBookToLibrary(book) {
@@ -60,7 +76,7 @@ function createBookElement(book) {
     const deleteBookButtonElem = document.createElement('button');
 
     bookElem.className = "book";
-    bookElem.id = book.id;
+    bookElem.id = book.getId();
     bookNameTitleElem.className = "bookTitleName"
     bookNameElem.className = "bookName";
     bookAuthorTitleElem.className = "bookAuthorTitle"
@@ -69,9 +85,9 @@ function createBookElement(book) {
     deleteBookButtonElem.className = "deleteButton";
 
     bookNameTitleElem.textContent = "Name";
-    bookNameElem.textContent = book.name;
+    bookNameElem.textContent = book.getName();
     bookAuthorTitleElem.textContent = "Author";
-    bookAuthorElem.textContent = book.author;
+    bookAuthorElem.textContent = book.getAuthor();
     readToggleElem.textContent = "READ"
     deleteBookButtonElem.textContent = "DELETE";
 
